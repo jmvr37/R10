@@ -7,7 +7,8 @@
  */
 
 import React from 'react';
-import About from '../js/screens/About/index';
+import AboutContainer from '../js/screens/About/index';
+
 import {
   SafeAreaView,
   StyleSheet,
@@ -33,6 +34,7 @@ const App = () => {
         <Text>R10</Text>
         <Text></Text>
       </View>
+      <AboutContainer />
       <View></View>
     </>
   );

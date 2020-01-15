@@ -29,36 +29,27 @@ import {
 const About = () => {
   return (
     <>
+      <ScrollView>
+        <Header>
+          <Text h1> R10 </Text>
+          <Text>
+            R10 is a conference that focuses on just about any topic related to
+            dev
+          </Text>
+        </Header>
+      </ScrollView>
       <View>
-        <Text>R10</Text>
+        <Header>Date Venue</Header>
+        <Text>
+          The R10 conference will take place on Tuesday, June 27, 2020 in
+          Vancouver, BC.
+        </Text>
+      </View>
+      <View>
+        <Header>Code of Conduct</Header>
       </View>
     </>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexWrap: 'wrap',
-    flexDirection: 'row',
-    backgroundColor: '#F5FCFF',
-  },
-  box: {
-    width: '50%',
-    height: '50%',
-  },
-  box1: {
-    backgroundColor: 'powderblue',
-  },
-  box2: {
-    backgroundColor: 'skyblue',
-  },
-  box3: {
-    backgroundColor: 'steelblue',
-  },
-  box4: {
-    backgroundColor: 'midnightblue',
-  },
-});
 
 export default About;
