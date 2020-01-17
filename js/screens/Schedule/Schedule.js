@@ -12,10 +12,12 @@ import {
   
 } from 'react-native';
 
+
+
 class Schedule extends React.Component {
 render(){
     return(
-        <Text> Helllooooo </Text>
+        <Text> this text is inside the schedule page </Text>
     );
 }
 }
