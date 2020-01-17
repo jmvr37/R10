@@ -78,8 +78,8 @@ import {
 }
 };
 
-// About.PropTypes = {
-//     data: PropTypes.array.isRequired
-// }
+About.PropTypes = {
+    data: PropTypes.array.isRequired
+}
 
 export default About;

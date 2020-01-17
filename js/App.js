@@ -6,10 +6,11 @@
  * @flow
  */
 
-import React, {component} from 'react';
-import AboutContainer from './screens/About';
-import {ApolloProvider} from '@apollo/react-hooks';
+import React, { component } from 'react';
+import { AboutContainer }   from './screens/About';
+import { ApolloProvider } from '@apollo/react-hooks';
 import client from './config/api';
+import { Schedule } from './screens/Schedule/index'
 // import RootStackNavigation from "../js/navigation/RootStackNavigation";
 
 
@@ -32,22 +33,24 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-const App = () => {
-  
+class App extends React.Component {
+  render(){
   return (
-    
       <ApolloProvider client={client}>
-         {/* <View>
-            <Image source={require("../js/assets/images/r10_logo.png")} />
-        </View> */}
-        <View>
-          <AboutContainer />
-        {/* <RootStackNavigation /> */}
+         <View style={{justifyContent: 'center',
+    alignItems: 'center'}}>
+            <Image style={{width: '50%', height: '50%',resizeMode: 'contain'}} source={require("../js/assets/images/r10_logo.png")} />
         </View>
+        <Schedule />
+          <AboutContainer />
+         
+        {/* <RootStackNavigation /> */}
+       
       </ApolloProvider>
     
   );
-
+}
 };
 
 export default App;
+
