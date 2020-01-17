@@ -7,10 +7,10 @@
  */
 
 import React, {component} from 'react';
-import AboutContainer from '../js/screens/About/index';
+import AboutContainer from './screens/About';
 import {ApolloProvider} from '@apollo/react-hooks';
-import client from '../js/config/api';
-import 
+import client from './config/api';
+// import RootStackNavigation from "../js/navigation/RootStackNavigation";
 
 
 import {
@@ -37,19 +37,17 @@ const App = () => {
   return (
     
       <ApolloProvider client={client}>
-         <View>
+         {/* <View>
             <Image source={require("../js/assets/images/r10_logo.png")} />
-        </View>
+        </View> */}
         <View>
-        <AboutContainer />
+          <AboutContainer />
+        {/* <RootStackNavigation /> */}
         </View>
       </ApolloProvider>
     
   );
 
 };
-
-
-
 
 export default App;

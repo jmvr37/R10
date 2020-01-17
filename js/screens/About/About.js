@@ -44,7 +44,7 @@ import {
       <ScrollView>
         <Text h1> hello </Text>
         <View>
-        {/* <Image source={require("../js/assets/images/r10_logo.png")} /> */}
+        <Image source={require("../../assets/images/r10_logo.png")} />
         </View>
         <Text>
           R10 is a conference that focuses on just about any topic related to

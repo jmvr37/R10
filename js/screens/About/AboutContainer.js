@@ -22,21 +22,21 @@ const ALL_CONDUCTS = gql `
     }
 `;
 
-const AboutContainer = () => {
-  return (
-  <ScrollView query={ALL_CONDUCTS}>
-      {({ loading, error, data }) =>{
-          if (loading)
-         return (
-             <View>
-                 <Text>hello</Text>
-             </View>
-         );
-          if (error) return <Text> Error </Text>;
-          return <About data={data.allConducts} />
-      }}
-  </ScrollView>
-  )
-  
-};
+class AboutContainer extends React.Component {
+  <ScrollView query={ALL_CONDUCTS}  {({ loading, error, data }) => {
+     if (loading)
+            return (
+                <View>
+           <Text>hello</Text>
+                </View>
+            );
+            if (error) return <Text> Error </Text>;
+            return <About data={data.allConducts} />
+            return <Text> Hello </Text>
+                }}>
+     
+    </ScrollView> 
+
 export default AboutContainer;
+
+
