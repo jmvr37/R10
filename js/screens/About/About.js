@@ -7,6 +7,7 @@
  */
 
 import React, {useEffect, useState} from 'react';
+import PropTypes from "prop-types";
 import {
   SafeAreaView,
   StyleSheet,
@@ -16,6 +17,10 @@ import {
   StatusBar,
   Button,
   FlatList,
+  Image,
+  CollapseHeader,
+  Collapse,
+  CollapseBody,
 } from 'react-native';
 
 import {
@@ -26,30 +31,48 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-const About = () => {
+
+
+const About = (props) => {
+   
+    
+    const { data } = this.props;
   return (
     <>
       <ScrollView>
-        <Header>
-          <Text h1> R10 </Text>
-          <Text>
-            R10 is a conference that focuses on just about any topic related to
-            dev
-          </Text>
-        </Header>
-      </ScrollView>
-      <View>
-        <Header>Date Venue</Header>
+        <Text h1> </Text>
+        <View>
+        {/* <Image source={require("../js/assets/images/r10_logo.png")} /> */}
+        </View>
         <Text>
-          The R10 conference will take place on Tuesday, June 27, 2020 in
-          Vancouver, BC.
+          R10 is a conference that focuses on just about any topic related to
+          dev
         </Text>
-      </View>
-      <View>
-        <Header>Code of Conduct</Header>
-      </View>
+
+        <View>
+          <Header>Date Venue</Header>
+          <Text>
+            The R10 conference will take place on Tuesday, June 27, 2020 in
+            Vancouver, BC.
+          </Text>
+        </View>
+        {data.map(({ id, title, description })=>{
+           <Collapse key={id}>
+               <CollapseHeader>
+               <Text>{title}</Text>
+               </CollapseHeader>
+               <CollapseBody>
+                <Text>{description}</Text>
+               </CollapseBody>
+               </Collapse>
+
+
+        })}
+        
+      </ScrollView>
     </>
   );
+
 };
 
 export default About;
