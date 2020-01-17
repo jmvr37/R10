@@ -10,6 +10,7 @@ import React, {component} from 'react';
 import AboutContainer from '../js/screens/About/index';
 import {ApolloProvider} from '@apollo/react-hooks';
 import client from '../js/config/api';
+import 
 
 
 import {
@@ -36,11 +37,12 @@ const App = () => {
   return (
     
       <ApolloProvider client={client}>
-
          <View>
             <Image source={require("../js/assets/images/r10_logo.png")} />
         </View>
+        <View>
         <AboutContainer />
+        </View>
       </ApolloProvider>
     
   );

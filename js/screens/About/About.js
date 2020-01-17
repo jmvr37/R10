@@ -8,6 +8,7 @@
 
 import React, {useEffect, useState} from 'react';
 import PropTypes from "prop-types";
+import {Collapse,CollapseHeader, CollapseBody, AccordionList} from 'accordion-collapse-react-native';
 import {
   SafeAreaView,
   StyleSheet,
@@ -18,9 +19,7 @@ import {
   Button,
   FlatList,
   Image,
-  CollapseHeader,
-  Collapse,
-  CollapseBody,
+  
 } from 'react-native';
 
 import {
@@ -33,14 +32,17 @@ import {
 
 
 
-const About = (props) => {
-   
-    
+// const About = (props) => {
+   class About extends React.Component{
+       constructor(props){
+           super(props);
+       }
+    render(){
     const { data } = this.props;
-  return (
+    return (
     <>
       <ScrollView>
-        <Text h1> </Text>
+        <Text h1> hello </Text>
         <View>
         {/* <Image source={require("../js/assets/images/r10_logo.png")} /> */}
         </View>
@@ -56,6 +58,7 @@ const About = (props) => {
             Vancouver, BC.
           </Text>
         </View>
+        <View>
         {data.map(({ id, title, description })=>{
            <Collapse key={id}>
                <CollapseHeader>
@@ -65,14 +68,18 @@ const About = (props) => {
                 <Text>{description}</Text>
                </CollapseBody>
                </Collapse>
-
-
         })}
+        </View>
         
       </ScrollView>
     </>
   );
-
+// }
+}
 };
+
+// About.PropTypes = {
+//     data: PropTypes.array.isRequired
+// }
 
 export default About;
