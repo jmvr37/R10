@@ -17,8 +17,6 @@ import {
     render(){
     return(
         <Text> this text is inside the schedule container </Text>
-      
-        
     )
 }
 

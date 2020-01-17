@@ -10,7 +10,7 @@ import React, { component } from 'react';
 import { AboutContainer }   from './screens/About';
 import { ApolloProvider } from '@apollo/react-hooks';
 import client from './config/api';
-import { Schedule } from './screens/Schedule/index'
+import { ScheduleContainer } from './screens/Schedule/index'
 // import RootStackNavigation from "../js/navigation/RootStackNavigation";
 
 
@@ -37,11 +37,10 @@ class App extends React.Component {
   render(){
   return (
       <ApolloProvider client={client}>
-         <View style={{justifyContent: 'center',
-    alignItems: 'center'}}>
+         <View style={{justifyContent: 'center',alignItems: 'center'}}>
             <Image style={{width: '50%', height: '50%',resizeMode: 'contain'}} source={require("../js/assets/images/r10_logo.png")} />
         </View>
-        <Schedule />
+        <ScheduleContainer />
           <AboutContainer />
          
         {/* <RootStackNavigation /> */}
