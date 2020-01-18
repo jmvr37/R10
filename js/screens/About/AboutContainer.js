@@ -24,35 +24,35 @@ import {
 //     }
 // `;
 
-
-
-const AboutContainer = () => {
-    const ALL_CONDUCTS = gql`
-    {
-        allConducts{
-            id
-            title
-            description
-        }
-    }
-`
-const { loading, error, data } = useQuery(ALL_CONDUCTS)
-
+class AboutContainer extends React.Component {
     
+    render() {
       return (
-        <View query={ALL_CONDUCTS}>
-          {({ loading, error, data }) => {
-            if (loading) return <Text> loading </Text>
-            if (error) return <Text>Error</Text>;
-            return (
-            <About data={data.allConducts} />
-            );
+        <View
+          query={gql`
+            {
+              allConducts {
+                id
+                description
+                title
+              }
+            }
+          `}>
+          {({loading, error, data}) => {
+            if (loading)
+              return <Text>Loading</Text>;
+            if (error) return <Text>Error :(</Text>;
+  
+            return <About allConducts={data.allConducts} />;
           }}
         </View>
       );
-    
+    }
   }
+
+
 export default AboutContainer;
+
 
 
 // render(){
@@ -72,3 +72,31 @@ export default AboutContainer;
 //     </ScrollView> 
 //     )
 // }
+
+
+// const AboutContainer = () => {
+//     const ALL_CONDUCTS = gql`
+//     {
+//         allConducts{
+//             id
+//             title
+//             description
+//         }
+//     }
+// `
+// const { loading, error, data } = useQuery(ALL_CONDUCTS)
+
+    
+//       return (
+//         <View query={ALL_CONDUCTS}>
+//           {({ loading, error, data }) => {
+//             if (loading) return <Text> loading </Text>
+//             if (error) return <Text>Error</Text>;
+//             return (
+//             <About data={data.allConducts} />
+//             );
+//           }}
+//         </View>
+//       );
+    
+//   }
