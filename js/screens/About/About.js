@@ -32,13 +32,19 @@ import {
 
 
 
-// const About = (props) => {
    class About extends React.Component{
        constructor(props){
            super(props);
        }
     render(){
     const { data } = this.props;
+
+    // return (
+    //   <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    //     <Text>ABOUT Screen</Text>
+    //   </View>
+    // );
+
     return (
     <>
       <ScrollView>
@@ -74,7 +80,6 @@ import {
       </ScrollView>
     </>
   );
-// }
 }
 };
 

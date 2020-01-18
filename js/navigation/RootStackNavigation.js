@@ -1,20 +1,24 @@
-import createStackNavigatior from "react-navigation";
 import React from 'react';
+import { View, Text } from 'react-native';
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
+// import  NavigationLayout  from "./NavigationLayout";
+import About from '../screens/About/AboutContainer';
 
-import  NavigationLayout  from "./NavigationLayout";
+class HomeScreen extends React.Component {
+  render() {
+    return (
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Text>Home Screen</Text>
+      </View>
+    );
+  }
+}
 
+const AppNavigator = createStackNavigator({
+  Home: {
+    screen: About,
+  },
+});
 
-
-
-
-// export default NavigationLayout;
-export default createStackNavigatior(
-    {
-        layout: NavigationLayout,
-    }
-);
-
-// export default {
-//     createStackNavigatior,
-//     NavigationLayout,
-// }
+export default createAppContainer(AppNavigator);

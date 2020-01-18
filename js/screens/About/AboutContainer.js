@@ -1,6 +1,6 @@
 // logic fetching data from the API
 import React, { Component } from "react";
-import { About } from './About';
+import About from './About';
 import { useQuery } from '@apollo/react-hooks';
 import { Query } from "@apollo/react-hooks";
 import { gql } from "apollo-boost";
@@ -14,40 +14,38 @@ import {
     Text,
   } from 'react-native';
 
-// const ALL_CONDUCTS = gql `
-//     query{
-//         allConducts{
-//             id
-//             title
-//             description
-//         }
-//     }
-// `;
+const ALL_CONDUCTS = gql `
+    query{
+        allConducts{
+            id
+            title
+            description
+        }
+    }
+`;
 
 class AboutContainer extends React.Component {
     
     render() {
-      return (
-        <View
-          query={gql`
-            {
-              allConducts {
-                id
-                description
-                title
-              }
-            }
-          `}>
-          {({loading, error, data}) => {
-            if (loading)
-              return <Text>Loading</Text>;
-            if (error) return <Text>Error :(</Text>;
-  
-            return <About allConducts={data.allConducts} />;
-          }}
-        </View>
-      );
-    }
+      return(
+        <Text> About container</Text>
+      )
+        return (
+              <Query query={ALL_CONDUCTS}>
+                  {({ loading, error, data }) => {
+                if (loading)
+               return (
+                   <View>
+                       <Text>hello</Text>
+                   </View>
+               );
+                if (error) return <Text> Error </Text>;
+                return <About data={data.allConducts} />
+              return <Text> Hello </Text>
+            }}
+          </Query> 
+          )
+      }
   }
 
 
@@ -100,3 +98,28 @@ export default AboutContainer;
 //       );
     
 //   }
+
+
+//   return (
+//     <View
+//       query={gql`
+//         {
+//           allConducts {
+//             id
+//             description
+//             title
+//           }
+//         }
+//       `}>
+//         <Text>banana</Text>
+//       {({loading, error, data}) => {
+//         if (loading)
+//           return <Text>Loading</Text>;
+//         if (error) return <Text>Error :(</Text>;
+
+//         // return <About allConducts={data.allConducts} />;
+//         return <Text>wtf</Text>
+//       }}
+//     </View>
+//   );
+// }
