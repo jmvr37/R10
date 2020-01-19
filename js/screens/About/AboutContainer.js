@@ -24,28 +24,32 @@ const ALL_CONDUCTS = gql `
     }
 `;
 
-class AboutContainer extends React.Component {
+
+// const GET_DOGS = gql`
+//   {
+//     dogs {
+//       id
+//       breed
+//     }
+//   }
+// `;
+const  AboutContainer = () => {
+  const { loading, error, data } = useQuery(ALL_CONDUCTS);
     
-    render() {
-      return(
-        <Text> About container</Text>
-      )
-        return (
-              <Query query={ALL_CONDUCTS}>
-                  {({ loading, error, data }) => {
-                if (loading)
-               return (
-                   <View>
-                       <Text>hello</Text>
-                   </View>
-               );
-                if (error) return <Text> Error </Text>;
-                return <About data={data.allConducts} />
-              return <Text> Hello </Text>
-            }}
-          </Query> 
-          )
-      }
+      // return(
+      //   <Text> About container</Text>
+      // )
+      if (loading) return (
+      <Text>Loading...</Text>)
+      if (error) return (
+      <Text>Error!</Text>);
+    
+      return (
+        <ScrollView>
+        <About data={data.allConducts} />
+        </ScrollView>
+      );
+      
   }
 
 

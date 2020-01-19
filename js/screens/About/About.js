@@ -8,6 +8,9 @@
 
 import React, {useEffect, useState} from 'react';
 import PropTypes from "prop-types";
+import { gql } from "apollo-boost";
+import { useQuery } from '@apollo/react-hooks';
+
 import {Collapse,CollapseHeader, CollapseBody, AccordionList} from 'accordion-collapse-react-native';
 import {
   SafeAreaView,
@@ -39,11 +42,7 @@ import {
     render(){
     const { data } = this.props;
 
-    // return (
-    //   <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-    //     <Text>ABOUT Screen</Text>
-    //   </View>
-    // );
+
 
     return (
     <>
@@ -64,19 +63,23 @@ import {
             Vancouver, BC.
           </Text>
         </View>
+      
         <View>
-        {data.map(({ id, title, description })=>{
-           <Collapse key={id}>
-               <CollapseHeader>
+        {data.map(({ id, title, description }) => {
+           <View key={id}>
+               
                <Text>{title}</Text>
-               </CollapseHeader>
-               <CollapseBody>
+               <Text>{description}</Text>
+               </View>
+               {/* <CollapseBody>
                 <Text>{description}</Text>
-               </CollapseBody>
-               </Collapse>
+               </CollapseBody> */}
+               
         })}
         </View>
-        
+       
+
+
       </ScrollView>
     </>
   );

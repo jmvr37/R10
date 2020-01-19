@@ -4,21 +4,26 @@ import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 // import  NavigationLayout  from "./NavigationLayout";
 import About from '../screens/About/AboutContainer';
+import Schedule from '../screens/Schedule/ScheduleContainer';
 
-class HomeScreen extends React.Component {
-  render() {
-    return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Home Screen</Text>
-      </View>
-    );
-  }
-}
+// class HomeScreen extends React.Component {
+//   render() {
+//     return (
+//       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+//         <Text>Home Screen</Text>
+//       </View>
+//     );
+//   }
+// }
 
 const AppNavigator = createStackNavigator({
-  Home: {
+  About: {
     screen: About,
+    
   },
+  Schedule: {
+    screen: Schedule,
+  }
 });
 
 export default createAppContainer(AppNavigator);
