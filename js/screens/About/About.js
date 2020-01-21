@@ -1,16 +1,9 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
-
 import React, {useEffect, useState} from 'react';
 import PropTypes from 'prop-types';
 import {gql} from 'apollo-boost';
 import {useQuery} from '@apollo/react-hooks';
 import styles from './styles';
+import ConductItem from '../../components/ConductItem';
 
 import {
   Collapse,
@@ -30,58 +23,36 @@ import {
   Image,
 } from 'react-native';
 
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
 class About extends React.Component {
   constructor(props) {
     super(props);
   }
   render() {
     const {data} = this.props;
-
+    console.log(data);
     return (
-      <>
-        <ScrollView style={styles.aboutPage}>
-          <View>
-            <Image
-              style={styles.aboutImage}
-              source={require('../../assets/images/r10_logo.png')}
-            />
-          </View>
-          <Text style={styles.text}>
-            R10 is a conference that focuses on just about any topic related to
-            dev
+      <ScrollView style={styles.aboutPage}>
+        <View>
+          <Image source={require('../../assets/images/r10_logo.png')} />
+        </View>
+        <Text style={styles.text}>
+          R10 is a conference that focuses on just about any topic related to
+          dev
+        </Text>
+        <View>
+          <Text>Date Venue</Text>
+          <Text>
+            The R10 conference will take place on Tuesday, June 27, 2020 in
+            Vancouver, BC.
           </Text>
+        </View>
 
-          <View>
-            <Header>Date Venue</Header>
-            <Text>
-              The R10 conference will take place on Tuesday, June 27, 2020 in
-              Vancouver, BC.
-            </Text>
-          </View>
-
-          <View>
-            {data.map(({id, title, description}) => {
-              <View key={id}>
-                <Text>{title}</Text>
-                <Text>{description}</Text>
-              </View>;
-              {
-                /* <CollapseBody>
-                <Text>{description}</Text>
-               </CollapseBody> */
-              }
-            })}
-          </View>
-        </ScrollView>
-      </>
+        <View>
+          {data.map(item => {
+            return <ConductItem item={item} />;
+          })}
+        </View>
+      </ScrollView>
     );
   }
 }

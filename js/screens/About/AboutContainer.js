@@ -1,29 +1,22 @@
 // logic fetching data from the API
-import React, { Component } from "react";
+import React, {Component} from 'react';
 import About from './About';
-import { useQuery } from '@apollo/react-hooks';
-import { Query } from "@apollo/react-hooks";
-import { gql } from "apollo-boost";
+import {useQuery} from '@apollo/react-hooks';
+import {Query} from '@apollo/react-hooks';
+import {gql} from 'apollo-boost';
 // import {Query} from '@apollo/react-components';
 import {ApolloProvider} from '@apollo/react-hooks';
-import {
-    SafeAreaView,
-    StyleSheet,
-    ScrollView,
-    View,
-    Text,
-  } from 'react-native';
+import {SafeAreaView, StyleSheet, ScrollView, View, Text} from 'react-native';
 
-const ALL_CONDUCTS = gql `
-    query{
-        allConducts{
-            id
-            title
-            description
-        }
+const ALL_CONDUCTS = gql`
+  query {
+    allConducts {
+      id
+      title
+      description
     }
+  }
 `;
-
 
 // const GET_DOGS = gql`
 //   {
@@ -33,29 +26,23 @@ const ALL_CONDUCTS = gql `
 //     }
 //   }
 // `;
-const  AboutContainer = () => {
-  const { loading, error, data } = useQuery(ALL_CONDUCTS);
-    
-      // return(
-      //   <Text> About container</Text>
-      // )
-      if (loading) return (
-      <Text>Loading...</Text>)
-      if (error) return (
-      <Text>Error!</Text>);
-    
-      return (
-        <ScrollView>
-        <About data={data.allConducts} />
-        </ScrollView>
-      );
-      
-  }
+const AboutContainer = () => {
+  const {loading, error, data} = useQuery(ALL_CONDUCTS);
 
+  // return(
+  //   <Text> About container</Text>
+  // )
+  if (loading) return <Text>Loading...</Text>;
+  if (error) return <Text>Error!</Text>;
+
+  return (
+    <ScrollView>
+      <About data={data.allConducts} />
+    </ScrollView>
+  );
+};
 
 export default AboutContainer;
-
-
 
 // render(){
 //     return (
@@ -71,10 +58,9 @@ export default AboutContainer;
 //           return <About data={data.allConducts} />
 //         return <Text> Hello </Text>
 //       }}
-//     </ScrollView> 
+//     </ScrollView>
 //     )
 // }
-
 
 // const AboutContainer = () => {
 //     const ALL_CONDUCTS = gql`
@@ -88,7 +74,6 @@ export default AboutContainer;
 // `
 // const { loading, error, data } = useQuery(ALL_CONDUCTS)
 
-    
 //       return (
 //         <View query={ALL_CONDUCTS}>
 //           {({ loading, error, data }) => {
@@ -100,9 +85,8 @@ export default AboutContainer;
 //           }}
 //         </View>
 //       );
-    
-//   }
 
+//   }
 
 //   return (
 //     <View

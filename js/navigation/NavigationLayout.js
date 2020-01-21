@@ -1,19 +1,15 @@
 import React from 'react';
 import {createStackNavigator} from 'react-navigation-stack';
 import {createBottomTabNavigator, BottomTabBar} from 'react-navigation-tabs';
-import About from '../screens/About/About';
-import Schedule from '../screens/Schedule/Schedule';
+import About from '../screens/About';
+import Schedule from '../screens/Schedule';
 
 const AboutStack = createStackNavigator({
-  About: {
-    About: About,
-  },
+  About: About,
 });
 
 const ScheduleStack = createStackNavigator({
-  Schedule: {
-    Schedule: Schedule,
-  },
+  Schedule: Schedule,
 });
 
 // Dedicated stacks for Schedule and Faves will go here too!
