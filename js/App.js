@@ -12,7 +12,7 @@ import {ApolloProvider} from '@apollo/react-hooks';
 import client from './config/api';
 import {ScheduleContainer} from './screens/Schedule/index';
 // import RootStackNavigator from './navigation/RootStackNavigator';
-import {RootStackNavigator} from './navigation/RootStackNavigator';
+// import {RootStackNavigator} from './navigation/RootStackNavigator';
 
 import {
   SafeAreaView,
@@ -46,7 +46,7 @@ class App extends React.Component {
         <ScheduleContainer />
         <AboutContainer />
 
-        <RootStackNavigatior />
+        {/* <RootStackNavigatior /> */}
       </ApolloProvider>
     );
   }
