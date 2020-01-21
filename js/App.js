@@ -6,13 +6,12 @@
  * @flow
  */
 
-import React, { component } from 'react';
-import { AboutContainer }   from './screens/About';
-import { ApolloProvider } from '@apollo/react-hooks';
+import React, {component} from 'react';
+import {AboutContainer} from './screens/About';
+import {ApolloProvider} from '@apollo/react-hooks';
 import client from './config/api';
-import { ScheduleContainer } from './screens/Schedule/index'
-import RootStackNavigation from "./navigation/RootStackNavigation";
-
+import {ScheduleContainer} from './screens/Schedule/index';
+import RootStackNavigation from './navigation/RootStackNavigation';
 
 import {
   SafeAreaView,
@@ -34,24 +33,22 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 class App extends React.Component {
-  render(){
-  return (
+  render() {
+    return (
       <ApolloProvider client={client}>
-         <View style={{justifyContent: 'center',alignItems: 'center'}}>
-            <Image style={{width: '50%', height: '50%',resizeMode: 'contain'}} source={require("../js/assets/images/r10_logo.png")} />
+        <View style={{justifyContent: 'center', alignItems: 'center'}}>
+          <Image
+            style={{width: '50%', height: '50%', resizeMode: 'contain'}}
+            source={require('../js/assets/images/r10_logo.png')}
+          />
         </View>
         {/* <ScheduleContainer /> */}
-          {/* <AboutContainer /> */}
-         
+        {/* <AboutContainer /> */}
+
         <RootStackNavigation />
-       
       </ApolloProvider>
-    
-  );
+    );
+  }
 }
-};
 
 export default App;
-
-
-

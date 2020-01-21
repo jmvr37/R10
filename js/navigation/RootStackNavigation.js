@@ -1,10 +1,8 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import { createAppContainer } from 'react-navigation';
-import { createStackNavigator } from 'react-navigation-stack';
-// import  NavigationLayout  from "./NavigationLayout";
-import About from '../screens/About/AboutContainer';
-import Schedule from '../screens/Schedule/ScheduleContainer';
+import {View, Text} from 'react-native';
+import {createAppContainer} from 'react-navigation';
+import {createStackNavigator} from 'react-navigation-stack';
+import NavigationLayout from './NavigationLayout';
 
 // class HomeScreen extends React.Component {
 //   render() {
@@ -16,14 +14,14 @@ import Schedule from '../screens/Schedule/ScheduleContainer';
 //   }
 // }
 
-const AppNavigator = createStackNavigator({
-  About: {
-    screen: About,
-    
-  },
-  Schedule: {
-    screen: Schedule,
-  }
-});
+// const AppNavigator = createStackNavigator({
+//   About: {
+//     screen: About,
 
-export default createAppContainer(AppNavigator);
+//   },
+//   Schedule: {
+//     screen: Schedule,
+//   }
+// });
+
+export default createAppContainer(NavigationLayout); // navigationLAyout page

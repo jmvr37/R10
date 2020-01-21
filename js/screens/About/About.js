@@ -7,11 +7,17 @@
  */
 
 import React, {useEffect, useState} from 'react';
-import PropTypes from "prop-types";
-import { gql } from "apollo-boost";
-import { useQuery } from '@apollo/react-hooks';
+import PropTypes from 'prop-types';
+import {gql} from 'apollo-boost';
+import {useQuery} from '@apollo/react-hooks';
+import styles from './styles';
 
-import {Collapse,CollapseHeader, CollapseBody, AccordionList} from 'accordion-collapse-react-native';
+import {
+  Collapse,
+  CollapseHeader,
+  CollapseBody,
+  AccordionList,
+} from 'accordion-collapse-react-native';
 import {
   SafeAreaView,
   StyleSheet,
@@ -22,7 +28,6 @@ import {
   Button,
   FlatList,
   Image,
-  
 } from 'react-native';
 
 import {
@@ -33,63 +38,56 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-
-
-   class About extends React.Component{
-       constructor(props){
-           super(props);
-       }
-    render(){
-    const { data } = this.props;
-
-
+class About extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    const {data} = this.props;
 
     return (
-    <>
-      <ScrollView>
-        <Text h1> hello </Text>
-        <View>
-        <Image source={require("../../assets/images/r10_logo.png")} />
-        </View>
-        <Text>
-          R10 is a conference that focuses on just about any topic related to
-          dev
-        </Text>
-
-        <View>
-          <Header>Date Venue</Header>
-          <Text>
-            The R10 conference will take place on Tuesday, June 27, 2020 in
-            Vancouver, BC.
+      <>
+        <ScrollView style={styles.aboutPage}>
+          <View>
+            <Image
+              style={styles.aboutImage}
+              source={require('../../assets/images/r10_logo.png')}
+            />
+          </View>
+          <Text style={styles.text}>
+            R10 is a conference that focuses on just about any topic related to
+            dev
           </Text>
-        </View>
-      
-        <View>
-        {data.map(({ id, title, description }) => {
-           <View key={id}>
-               
-               <Text>{title}</Text>
-               <Text>{description}</Text>
-               </View>
-               {/* <CollapseBody>
+
+          <View>
+            <Header>Date Venue</Header>
+            <Text>
+              The R10 conference will take place on Tuesday, June 27, 2020 in
+              Vancouver, BC.
+            </Text>
+          </View>
+
+          <View>
+            {data.map(({id, title, description}) => {
+              <View key={id}>
+                <Text>{title}</Text>
                 <Text>{description}</Text>
-               </CollapseBody> */}
-               
-        })}
-        </View>
-       
-
-
-      </ScrollView>
-    </>
-  );
+              </View>;
+              {
+                /* <CollapseBody>
+                <Text>{description}</Text>
+               </CollapseBody> */
+              }
+            })}
+          </View>
+        </ScrollView>
+      </>
+    );
+  }
 }
-};
 
 About.PropTypes = {
-    data: PropTypes.array.isRequired
-}
+  data: PropTypes.array.isRequired,
+};
 
 export default About;
-
-
