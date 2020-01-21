@@ -40,8 +40,8 @@ class App extends React.Component {
          <View style={{justifyContent: 'center',alignItems: 'center'}}>
             <Image style={{width: '50%', height: '50%',resizeMode: 'contain'}} source={require("../js/assets/images/r10_logo.png")} />
         </View>
-        <ScheduleContainer />
-          <AboutContainer />
+        {/* <ScheduleContainer /> */}
+          {/* <AboutContainer /> */}
          
         <RootStackNavigation />
        
