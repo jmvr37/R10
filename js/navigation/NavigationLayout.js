@@ -3,6 +3,7 @@ import {createStackNavigator} from 'react-navigation-stack';
 import {createBottomTabNavigator, BottomTabBar} from 'react-navigation-tabs';
 import About from '../screens/About';
 import Schedule from '../screens/Schedule';
+import Faves from '../screens/Faves';
 
 const AboutStack = createStackNavigator({
   About: About,
@@ -10,6 +11,10 @@ const AboutStack = createStackNavigator({
 
 const ScheduleStack = createStackNavigator({
   Schedule: Schedule,
+});
+
+const FavesStack = createStackNavigator({
+  Faves: Faves,
 });
 
 // Dedicated stacks for Schedule and Faves will go here too!
@@ -20,6 +25,7 @@ export default createBottomTabNavigator(
   {
     Schedule: ScheduleStack,
     About: AboutStack,
+    Faves: FavesStack,
   },
   {
     tabBarOptions: {

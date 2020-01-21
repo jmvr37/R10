@@ -10,7 +10,7 @@ import {
   FlatList,
   Image,
 } from 'react-native';
-import FavesContainer from './ScheduleContainer';
+import FavesContainer from './FavesContainer';
 
 class Faves extends React.Component {
   render() {

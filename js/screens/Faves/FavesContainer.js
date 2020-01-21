@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import Schedule from './Schedule';
 import {useQuery} from '@apollo/react-hooks';
 import {Query} from '@apollo/react-hooks';
 import {gql} from 'apollo-boost';
