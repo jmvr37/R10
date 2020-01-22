@@ -1,6 +1,8 @@
 import React from 'react';
 import AsyncStorage from '@react-native-community/async-storage';
 
+let faves =[]
+
 let obj = {
     id: 1, 
     name: "event", 
@@ -21,5 +23,15 @@ try {
   }
   console.log(JSON.parse(result).value);
   
+}
+
+removeData = async =() => {
+    try{
+        await AsyncStorage.removeItem("thisIsaKey,", JSON.stringify({ value: "hi"}));
+        const result = await AsyncStorage.removeItem("thisIsaKey");
+    } catch (e) {
+        throw e;
+    }
+
 }
 }
