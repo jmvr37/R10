@@ -25,14 +25,14 @@ class Faves extends React.Component {
     async () => {
       await models.set('faveIds');
       const response = await models.get('faveIds');
-      setAnswer(response);
+      this.setState({data: response});
     };
   }
 
   render() {
     return (
       <View>
-        <Text> faves are: {answer}</Text>
+        <Text> faves are: {this.state.data}</Text>
       </View>
     );
     // return <FavesContainer />;
