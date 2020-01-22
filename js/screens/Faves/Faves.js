@@ -11,16 +11,31 @@ import {
   Image,
 } from 'react-native';
 import FavesContainer from './FavesContainer';
+import models from '../../config/models';
 
 class Faves extends React.Component {
-  render() {
-    // return(
-    //     <View>
-    //     <Text> this text is inside the schedule page yes </Text>
-    //     </View>
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: null,
+    };
+  }
 
-    // );
-    return <FavesContainer />;
+  componentDidMount() {
+    async () => {
+      await models.set('faveIds');
+      const response = await models.get('faveIds');
+      setAnswer(response);
+    };
+  }
+
+  render() {
+    return (
+      <View>
+        <Text> faves are: {answer}</Text>
+      </View>
+    );
+    // return <FavesContainer />;
   }
 }
 

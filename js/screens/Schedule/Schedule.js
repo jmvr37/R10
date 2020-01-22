@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 
 import {
   SafeAreaView,
@@ -21,19 +21,26 @@ class Schedule extends React.Component {
   render() {
     const {data} = this.props;
     console.log(data);
+
     return (
-      <Text>hello</Text>
-      // <View>
-      //   {data.map(item => {
-      //     return <ScheduleContainer item={item} />;
-      //   })}
-      // </View>
+      <ScrollView>
+        <Text>{data.title}</Text>
+        <Text>{data.location}</Text>
+      </ScrollView>
     );
   }
 }
 
-Schedule.PropTypes = {
-  data: PropTypes.array.isRequired,
+Schedule.propTypes = {
+  data: propTypes.array.isRequired,
 };
 
 export default Schedule;
+
+{
+  /* <View>
+        {data.map(item => {
+          return <ScheduleContainer item={item} />;
+        })}
+      </View> */
+}
