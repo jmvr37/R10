@@ -40,8 +40,10 @@ class About extends React.Component {
           dev
         </Text>
         <View>
-          <Text>Date Venue</Text>
-          <Text>
+          <View>
+            <Text style={styles.title}>Date Venue</Text>
+          </View>
+          <Text style={styles.text}>
             The R10 conference will take place on Tuesday, June 27, 2020 in
             Vancouver, BC.
           </Text>

@@ -29,9 +29,9 @@ const MapsStack = createStackNavigator({
 export default createBottomTabNavigator(
   {
     Schedule: ScheduleStack,
-    About: AboutStack,
-    Faves: FavesStack,
     Maps: MapsStack,
+    Faves: FavesStack,
+    About: AboutStack,
   },
   {
     tabBarOptions: {

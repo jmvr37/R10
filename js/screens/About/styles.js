@@ -18,6 +18,12 @@ const styles = StyleSheet.create({
     paddingBottom: 20,
     fontWeight: '200',
   },
+  title: {
+    fontSize: 40,
+    fontWeight: '400',
+    paddingBottom: 30,
+    lineHeight: 25,
+  },
 });
 
 export default styles;
