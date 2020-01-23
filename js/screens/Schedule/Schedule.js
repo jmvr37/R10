@@ -24,15 +24,20 @@ class Schedule extends React.Component {
 
     return (
       <ScrollView>
-        <View>
+        {/* <View>
           <Text>{data.title}</Text>
           <Text>{data.location}</Text>
-        </View>
-        {/* <View>
-          {data.map(item => {
-            return <ScheduleContainer item={item} />;
-          })}
         </View> */}
+        <View>
+          {data.map(data => {
+            return (
+              <View key={data.id}>
+                <Text>{data.title}</Text>
+                <Text>{data.location}</Text>
+              </View>
+            );
+          })}
+        </View>
       </ScrollView>
     );
   }
