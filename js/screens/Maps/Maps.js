@@ -1,4 +1,6 @@
-import React, {useEffect, useState} from 'react';
+import React, {Component} from 'react';
+import MapView from 'react-native-maps';
+
 import {
   SafeAreaView,
   StyleSheet,
@@ -12,16 +14,33 @@ import {
 } from 'react-native';
 import MapsContainer from './MapsContainer';
 
-class Maps extends React.Component {
+export default class App extends Component {
   render() {
-    // return(
-    //     <View>
-    //     <Text> this text is inside the schedule page yes </Text>
-    //     </View>
-
-    // );
-    return <MapsContainer />;
+    return (
+      <MapView
+        style={{flex: 1}}
+        region={{
+          latitude: 42.882004,
+          longitude: 74.582748,
+          latitudeDelta: 0.0922,
+          longitudeDelta: 0.0421,
+        }}
+        showsUserLocation={true}
+      />
+    );
   }
 }
 
-export default Maps;
+// class Maps extends React.Component {
+//   render() {
+//     // return(
+//     //     <View>
+//     //     <Text> this text is inside the schedule page yes </Text>
+//     //     </View>
+
+//     // );
+//     return <MapsContainer />;
+//   }
+// }
+
+// export default Maps;
