@@ -18,8 +18,16 @@ class Schedule extends React.Component {
   constructor(props) {
     super(props);
   }
+
+  groupHour = hour => {
+    return new Date(hour).toLocaleTimeString('en-US', {
+      hour: '2-digit',
+      minute: '2-digit',
+    });
+  };
   render() {
     const {data} = this.props;
+    const {state} = this.context;
     console.log(data);
 
     return (

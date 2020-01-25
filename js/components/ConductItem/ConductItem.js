@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
-
+import styles from './styles';
+// import {Icon} from 'semantic-ui-react';
 class ConductItem extends Component {
   constructor(props) {
     super(props);
@@ -21,9 +22,11 @@ class ConductItem extends Component {
     return (
       <View>
         <TouchableOpacity onPress={this.toggleItem}>
-          <Text>{item.title}</Text>
+          <Text style={styles.title}>{item.title}</Text>
         </TouchableOpacity>
-        {this.state.expanded && <Text>{item.description}</Text>}
+        {this.state.expanded && (
+          <Text style={styles.description}>{item.description}</Text>
+        )}
       </View>
     );
   }

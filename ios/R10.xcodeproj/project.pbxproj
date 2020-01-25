@@ -18,6 +18,7 @@
 		2DCD954D1E0B4F2C00145EB5 /* R10Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* R10Tests.m */; };
 		2F2B218A67167135A1E4214A /* libPods-R10.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 170AA53761177C5C9F93B2D9 /* libPods-R10.a */; };
 		30DB586F464534BD0D14A31A /* libPods-R10-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 617317E16161D8DF4A83FD8B /* libPods-R10-tvOSTests.a */; };
+		8202217923DAB0DB001232AC /* AirGoogleMaps in Resources */ = {isa = PBXBuildFile; fileRef = 8202217823DAB0DB001232AC /* AirGoogleMaps */; };
 		B870046EB8D1CB0357AF5600 /* libPods-R10-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6074B23D5B68739A58BAF42B /* libPods-R10-tvOS.a */; };
 		F57BE009AC00215E61A8BE36 /* libPods-R10Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C53249CA38327BE7379ECE58 /* libPods-R10Tests.a */; };
 /* End PBXBuildFile section */
@@ -59,6 +60,7 @@
 		5F080A6F505DFE00DB1C4651 /* Pods-R10Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-R10Tests.release.xcconfig"; path = "Target Support Files/Pods-R10Tests/Pods-R10Tests.release.xcconfig"; sourceTree = "<group>"; };
 		6074B23D5B68739A58BAF42B /* libPods-R10-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-R10-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		617317E16161D8DF4A83FD8B /* libPods-R10-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-R10-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8202217823DAB0DB001232AC /* AirGoogleMaps */ = {isa = PBXFileReference; lastKnownFileType = folder; name = AirGoogleMaps; path = "../node_modules/react-native-maps/lib/ios/AirGoogleMaps"; sourceTree = "<group>"; };
 		8A5365EB97836F03BB834BC6 /* Pods-R10-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-R10-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-R10-tvOSTests/Pods-R10-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		B49CD40D0919F5E68BB5FEC6 /* Pods-R10-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-R10-tvOS.release.xcconfig"; path = "Target Support Files/Pods-R10-tvOS/Pods-R10-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		BC14E7C4D8F22356F59D442B /* Pods-R10-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-R10-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-R10-tvOS/Pods-R10-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -148,7 +150,6 @@
 				E433B565C3D9F95B1AA778F5 /* Pods-R10Tests.debug.xcconfig */,
 				5F080A6F505DFE00DB1C4651 /* Pods-R10Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -175,6 +176,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				8202217823DAB0DB001232AC /* AirGoogleMaps */,
 				13B07FAE1A68108700A75B9A /* R10 */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* R10Tests */,
@@ -308,6 +310,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -336,6 +339,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8202217923DAB0DB001232AC /* AirGoogleMaps in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 			);
@@ -805,10 +809,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
+				GCC_PREPROCESSOR_DEFINITIONS = "HAVE_GOOGLE_MAPS=1";
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -856,6 +857,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = "HAVE_GOOGLE_MAPS=1";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
