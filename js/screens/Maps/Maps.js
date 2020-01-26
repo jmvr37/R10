@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import MapView from 'react-native-maps';
+//import MapView from 'react-native-maps';
 
 import {
   SafeAreaView,
@@ -17,16 +17,19 @@ import MapsContainer from './MapsContainer';
 export default class App extends Component {
   render() {
     return (
-      <MapView
-        style={{flex: 1}}
-        region={{
-          latitude: 49.246292,
-          longitude: -123.116226,
-          latitudeDelta: 0.0922,
-          longitudeDelta: 0.0421,
-        }}
-        showsUserLocation={true}
-      />
+      // <MapView
+      //   style={{flex: 1}}
+      //   region={{
+      //     latitude: 49.246292,
+      //     longitude: -123.116226,
+      //     latitudeDelta: 0.0922,
+      //     longitudeDelta: 0.0421,
+      //   }}
+      //   showsUserLocation={true}
+      // />
+      <View>
+        <Text> this text is inside the schedule page yes </Text>
+      </View>
     );
   }
 }
