@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
 import styles from './styles';
-// import {Icon} from 'semantic-ui-react';
 class ConductItem extends Component {
   constructor(props) {
     super(props);

@@ -13,16 +13,18 @@ const styles = StyleSheet.create({
   },
 
   text: {
-    fontSize: 27,
+    fontSize: '10',
     lineHeight: 25,
-    paddingBottom: 20,
-    fontWeight: '200',
+    paddingBottom: 10,
+    fontWeight: '100',
+    color: 'red',
   },
   title: {
     fontSize: 40,
     fontWeight: '400',
     paddingBottom: 30,
     lineHeight: 25,
+    maxHeight: 'auto',
   },
 });
 

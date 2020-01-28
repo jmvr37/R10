@@ -6,12 +6,6 @@ import styles from './styles';
 import ConductItem from '../../components/ConductItem';
 
 import {
-  Collapse,
-  CollapseHeader,
-  CollapseBody,
-  AccordionList,
-} from 'accordion-collapse-react-native';
-import {
   SafeAreaView,
   StyleSheet,
   ScrollView,
@@ -36,8 +30,8 @@ class About extends React.Component {
           <Image source={require('../../assets/images/r10_logo.png')} />
         </View>
         <Text style={styles.text}>
-          R10 is a conference that focuses on just about any topic related to
-          dev
+          heloooooo R10 is a conference that focuses on just about any topic
+          related to dev
         </Text>
         <View>
           <View>
